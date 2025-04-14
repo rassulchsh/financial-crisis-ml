@@ -9,7 +9,7 @@ __pycache__/
 *.pyo
 *.pyd
 
-# Jupyter Notebook checkpoints (if you ever use notebooks)
+# Jupyter Notebook checkpoints 
 .ipynb_checkpoints/
 
 # VS Code settings
