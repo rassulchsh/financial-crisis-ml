@@ -1,5 +1,33 @@
-code/__pycache__
-code/.ipynb_checkpoints/run-checkpoint.ipynb
-code/run.ipynb
-code/makeFigures.ipynb
-code/singularForecast.ipynb
+# Ignore virtual environments
+env/
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Jupyter Notebook checkpoints (if you ever use notebooks)
+.ipynb_checkpoints/
+
+# VS Code settings
+.vscode/
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+
+# macOS system files
+.DS_Store
+
+# Python egg and build files
+*.egg-info/
+*.egg
+build/
+dist/
+
+# Environment variables or secrets
+.env

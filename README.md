@@ -1,11 +1,85 @@
-# Code: Machine Learning for Financial Crisis Prediction
-This repository contains the code used in the paper "**[Predicting Financial Crises: An Evaluation of Machine Learning Algorithms and Model Explainability for Early Warning Systems](https://link.springer.com/article/10.1007/s43253-024-00114-4)**".
+# Financial Crisis Prediction System
 
-The paper addresses the critical challenge of detecting financial crises in their early stages given their profound economic and societal consequences. It investigates the efficacy of machine learning models by comparing the standard econometric model of Logistic Regression with k-nearest Neighbours, Random Forest, Extremely Randomised Trees, Support Vector Machine, and artificial Neural Network models in a cross-validation experiment. The study utilises financial crisis observations between 1870-2020 from the MacroHistory database and up to 15 early warning indicators from different theoretical backgrounds. The results demonstrate that advanced machine learning models, particularly Random Forest and Extremely Randomised Trees, outperform Logistic Regression, as measured by the area under the receiver operating characteristic curve (AUROC). This finding holds across various crisis data sources, early warning indicator sets, and model specifications. Furthermore, the paper emphasises the importance of model explainability for both researchers and policymakers by employing Accumulated Local Effect (ALE) plots to unravel the complex predictive processes of advanced machine learning models and provide deeper insight into the underlying crisis dynamics. Nonlinear connections to financial crises were identified for several early warning indicators, which are difficult to capture by linear models. Several U-shaped relationships were observed, highlighting the disruptive role of strong economic changes for financial stability.
+This project is a comprehensive, machine learning-based early warning system designed to predict financial crises using macroeconomic and financial indicators. The foundation of the project is based on the research by **Chris Reimann**, extended with additional data sources, new model architectures, and a modular data pipeline.
 
-## Structure of the Code
-The experiments of the paper are implemented in the Python programming language. The machine learning models were adapted from the [Scikit-Learn](https://github.com/scikit-learn/scikit-learn) package, while the [Pandas](https://github.com/pandas-dev/pandas), [Numpy](https://github.com/numpy/numpy) and [MatplotLib](https://github.com/matplotlib/matplotlib) packages provided the basis for more general data processing. The ALE plots were generated using the  [Alibi Explain](https://github.com/SeldonIO/alibi) package. The code was organized into the following files:
-- *altCrisisData.py*: Manages access to alternative data sources for crisis events, namely ESRB and Laeven & Valencia 2018.
-- *doExperiment.py*: Runs the actual experiment based on the collected data and machine learning models from SciKitLearn and allows the selection of different experimental designs (Cross-Validation, Strict Forecasting, In-Sample Prediction).
-- *prepareData.py*: Loads and processes the crisis event and early warning indicator data. 
-- *utils.py*: Provides custom data splitting methods (train/test) used in the experiments. 
+---
+
+## 📊 Project Purpose
+
+The aim is to build an **interpretable**, robust predictive system that:
+
+1. **Forecasts** systemic financial crises at a country level.  
+2. **Integrates** real-world economic data from multiple global sources.  
+3. **Compares** classical ML models with advanced methods (XGBoost, LSTM).  
+4. Supports **interpretability** with ALE plots and robustness testing.
+
+---
+
+## 🔗 Key Features
+
+### ✈️ Data Pipeline
+- **World Bank Data Ingestion**: Automatic ingestion of macroeconomic indicators from 1960 to 2023.  
+- **IMF WEO Dataset Integration**: Forecast-oriented data (2024–2028) such as GDP, inflation, debt.  
+- **Crisis Label Sources**:  
+  - JST Macrohistory Database  
+  - Laeven & Valencia (IMF banking crises)  
+  - ESRB (European Systemic Risk Board)  
+
+### 📊 Models Supported
+- **Logistic Regression (Logit)**  
+- **Random Forest**  
+- **Extra Trees**  
+- **Support Vector Machine (SVM)**  
+- **Neural Networks (MLP)**  
+- **K-Nearest Neighbors (KNN)**  
+- **XGBoost** ✨ *(new)*  
+- **LSTM** ✨ *(new, with time-series reshaping)*
+
+### 📈 Experiment Modes
+- **In-Sample**: Full dataset fitting.  
+- **Cross-Validation**: Repeated temporal group validation.  
+- **Forecast**: True out-of-sample performance starting from 1980.
+
+---
+
+## 🔍 Project Structure
+
+financialCrisisML/ ├── code/ │ ├── data_pipeline/ │ │ ├── ingest_worldbank.py │ │ ├── ingest_imf.py │ │ └── prepareData.py │ ├── doExperiment.py │ ├── model_new_perform.py │ ├── new_models_experiment.py │ └── utils.py ├── visualizations/ ├── logs/ └── README.md
+
+
+---
+
+## 🌐 Data Sources
+
+- **World Bank API** (via `wbdata` and manual fetches)  
+- **IMF WEO Forecast Dataset** (April 2024 release)  
+- **JSTdatasetR6.xlsx** (historical macrofinancial data)
+
+---
+
+## ✨ Recent Contributions
+
+This fork introduces several key enhancements:
+
+- **✅ Refactored** `worldbank_ingest.py` to include 15 countries and indicators from 1960–2023.  
+- **✅ Integrated** IMF WEO data, covering up to 2028 forecasts.  
+- **✅ Introduced** XGBoost and LSTM support in the pipeline.  
+- **✅ Added** robustness testing with ESRB and Laeven & Valencia labels.  
+- **✅ Improved** visualizations: ROC curves, ALE plots, AUC tables.
+
+---
+
+## 📘 Getting Started
+
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Run World Bank ingestion
+python code/data_pipeline/woldBankIngest.py
+
+# Run IMF ingestion
+python code/data_pipeline/imgIngest.py
+
+# Launch experiment (e.g., XGBoost & LSTM)
+python code/model_new_perform.py

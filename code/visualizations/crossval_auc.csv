@@ -1,0 +1,13 @@
+Set,Model,AUC
+Macro,LSTM,0.6864734521636846
+Macro,XGBoost,0.6857037298093419
+Macro,Random Assignment,0.5
+Credit,XGBoost,0.7923149554401246
+Credit,LSTM,0.7866507648285308
+Credit,Random Assignment,0.5
+Credit & Asset,XGBoost,0.7972623720358374
+Credit & Asset,LSTM,0.78013198570671
+Credit & Asset,Random Assignment,0.5
+All,XGBoost,0.8038212028842782
+All,LSTM,0.7810034897206499
+All,Random Assignment,0.5

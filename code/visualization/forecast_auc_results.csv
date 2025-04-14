@@ -1,0 +1,22 @@
+Set,Model,AUC
+Macro,SVM,0.646393566222669
+Macro,Logit,0.6322777917399681
+Macro,NeuralNet,0.6286755466197537
+Macro,KNeighbors,0.6118790315824747
+Macro,ExtraTrees,0.5443578788640362
+Macro,Random Assignment,0.5
+Macro,RandomForest,0.4603334171064757
+Financial,SVM,0.8542187199692485
+Financial,RandomForest,0.8010763021333847
+Financial,ExtraTrees,0.7970882183355755
+Financial,NeuralNet,0.775994618489333
+Financial,KNeighbors,0.7643426869113972
+Financial,Logit,0.5704881798962137
+Financial,Random Assignment,0.5
+All,ExtraTrees,0.7518818760856977
+All,KNeighbors,0.745560702567072
+All,RandomForest,0.7261146496815287
+All,SVM,0.7065720903300521
+All,NeuralNet,0.630862767805443
+All,Logit,0.5853117158849643
+All,Random Assignment,0.5
