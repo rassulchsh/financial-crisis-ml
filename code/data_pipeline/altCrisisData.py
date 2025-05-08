@@ -18,7 +18,7 @@ def getLaevenValencia(folder=None, vers=2020):
     df_alt["iso3"] = coco.convert(names=df_alt.Country, to="ISO3")
     country_list = df_alt.iso3.unique()
 
-    # create new DataSet
+    # create a new DataSet
     new = []
     for iso in country_list:
         for year in range(1970, 2018):

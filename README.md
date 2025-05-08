@@ -1,6 +1,6 @@
 # 🌐 Financial Crisis Prediction System
 
-A multi-modal early-warning system that predicts financial and economic crises by combining **macroeconomic indicators**, **credit expansion**, and **news-sentiment analysis**.  
+A multi-modal early-warning system that predicts financial and economic crises by fusing **macroeconomic indicators**, **credit expansion**, and **news-sentiment analysis**.  
 The project is inspired by **Chris Reimann (2022)** and extended with a modern, end-to-end ML pipeline and an interactive dashboard.
 
 ![ERI Dashboard](./code/visualization/eri_dashboard.png)
