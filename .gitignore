@@ -96,7 +96,6 @@ code/data_pipeline/logs/
 # Visualization Outputs (assume large generated images/videos)
 # ---------------------------------------------------------------------------
 plots/ 
-code/visualization/ 
 code/visualizations/ 
 code/visualizations_new/
 
